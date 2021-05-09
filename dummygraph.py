@@ -427,7 +427,7 @@ def taskSizeVsTaskDropBar():
 # serverVsEnergy()
 # serverVsUtilityPerUnitCost()
 # serverVsTaskDrop()
-serverVsTaskDropBar()
+# serverVsTaskDropBar()
 
 # taskSizeVsLatency()
 # taskSizeVsEnergy()
