@@ -348,7 +348,7 @@ def taskSizeVsUtilityPerUnitCost():
     plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
 
     plt.legend()
-    plt.savefig("tasksizevsutilitypercost.png")
+    plt.savefig("Images/tasksizevsutilitypercost.png")
     plt.show()
 
 
@@ -358,7 +358,7 @@ def taskSizeVsTaskDrop():
     y2 = []
     y3 = []
     y4 = []
-    for line in open('tasksizevstaskdrop.txt', 'r'):
+    for line in open('Data/tasksizevstaskdrop.txt', 'r'):
         lines = [i for i in line.split()]
         x1.append(lines[0])
         y1.append(float(lines[1]))
