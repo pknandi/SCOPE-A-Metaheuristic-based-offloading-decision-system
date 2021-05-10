@@ -366,17 +366,16 @@ def taskSizeVsTaskDrop():
         y3.append(float(lines[3]))
         y4.append(float(lines[4]))
 
-    plt.title("Task size vs Task Drop rate")
     plt.xlabel('Task size')
     plt.ylabel('Task Drop Rate')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCO')
+    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
     plt.plot(x1, y1, marker='v', c='b', label='MTMS')
     plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
     plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
 
     plt.legend()
-    plt.savefig("tasksizevstaskdrop.png")
+    plt.savefig("Images/tasksizevstaskdrop.png")
     plt.show()
 
 
@@ -432,5 +431,5 @@ def taskSizeVsTaskDropBar():
 # taskSizeVsLatency()
 # taskSizeVsEnergy()
 # taskSizeVsUtilityPerUnitCost()
-# taskSizeVsTaskDrop()
+taskSizeVsTaskDrop()
 # taskSizeVsTaskDropBar()
