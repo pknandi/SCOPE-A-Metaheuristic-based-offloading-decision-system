@@ -269,7 +269,7 @@ def taskSizeVsLatency():
     y4 = []
     for line in open('Data/tasksizevslatency.txt', 'r'):
         lines = [i for i in line.split()]
-        x1.append(lines[0])
+        x1.append(float(lines[0]))
         y1.append(float(lines[1]))
         y2.append(float(lines[2]))
         y3.append(float(lines[3]))
@@ -277,11 +277,11 @@ def taskSizeVsLatency():
 
     plt.xlabel('Task Size')
     plt.ylabel('Service Latency')
-
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    # plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
+    plt.errorbar(x1, y4, color='green', label='SCOPE', yerr=0.05, marker='o')
+    # plt.plot(x1, y1, marker='v', c='b', label='MTMS')
+    # plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
+    # plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
 
     plt.legend()
     plt.savefig("Images/tasksizevslatency.png")
@@ -407,10 +407,10 @@ def taskSizeVsTaskDropBar():
     plt.show()
 
 
-subtaskVsLatency()
-subtaskVsEnergy()
-subtaskVsUtilCost()
-subtaskVsTaskDrop()
+# subtaskVsLatency()
+# subtaskVsEnergy()
+# subtaskVsUtilCost()
+# subtaskVsTaskDrop()
 
 # serverVsLatency()
 # serverVsEnergy()
@@ -418,7 +418,7 @@ subtaskVsTaskDrop()
 # serverVsTaskDrop()
 # serverVsTaskDropBar()
 
-# taskSizeVsLatency()
+taskSizeVsLatency()
 # taskSizeVsEnergy()
 # taskSizeVsUtilityPerUnitCost()
 # taskSizeVsTaskDrop()
