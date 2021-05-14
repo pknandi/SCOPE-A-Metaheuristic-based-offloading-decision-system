@@ -279,8 +279,8 @@ def taskSizeVsLatency():
     plt.ylabel('Service Latency')
     # plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
     plt.errorbar(x1, y4, color='green', label='SCOPE', yerr=0.255, marker='o')
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.270, marker='v')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.27, marker='v')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.3, marker='^')
     plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
 
     plt.legend()
