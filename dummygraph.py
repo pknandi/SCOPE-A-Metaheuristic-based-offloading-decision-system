@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib import font_manager
 
 
 def subtaskVsLatency():
@@ -275,15 +276,15 @@ def taskSizeVsLatency():
         y3.append(float(lines[3]))
         y4.append(float(lines[4]))
 
-    plt.xlabel('Task Size')
-    plt.ylabel('Service Latency')
+    plt.xlabel('Task Size', fontsize=11, fontname='monospace')
+    plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
 
-    plt.errorbar(x1, y4, color='green', label='SCOPE', yerr=0.18, marker='o', capsize=2, linestyle='solid', linewidth=1)
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.21, marker='v', capsize=2, linestyle='dotted')
-    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.22, marker='^', capsize=2, linestyle='dashed')
-    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.16, marker='P', capsize=2, linestyle='dashdot', linewidth=1)
-
-    plt.legend()
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.18, marker='o', capsize=2, linestyle='solid', linewidth=0.9, markersize=4.5)
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.21, marker='^', capsize=2, linestyle='dotted', linewidth=1.5, markersize=4.7)
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.22, marker='s', capsize=2, linestyle='dashed', linewidth=1.3, markersize=4.7)
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.16, marker='P', capsize=2, linestyle='dashdot', linewidth=1.3, markersize=4.7)
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
     plt.savefig("Images/tasksizevslatency.png")
     plt.show()
 
