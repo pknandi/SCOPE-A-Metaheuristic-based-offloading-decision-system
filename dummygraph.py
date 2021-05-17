@@ -307,13 +307,13 @@ def taskSizeVsEnergy():
     plt.ylabel('Energy Consumption', fontsize=11, fontname='monospace')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
-                 markersize=4.5)
+                 markersize=4.5, fillstyle='full')
     plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
-                 markersize=4.7)
+                 markersize=4.7, fillstyle='full')
     plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.022, marker='s', capsize=2, linestyle='dashed',
-                 linewidth=1.3, markersize=4.7)
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.021, marker='P', capsize=2, linestyle='dashdot',
-                 linewidth=1.3, markersize=4.7)
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
