@@ -335,15 +335,20 @@ def taskSizeVsUtilityPerUnitCost():
         y3.append(float(lines[3]))
         y4.append(float(lines[4]))
 
-    plt.xlabel('Task size')
-    plt.ylabel('Utility per unit Cost')
+    plt.xlabel('Task size', fontsize=11, fontname='monospace')
+    plt.ylabel('Utility per unit Cost', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.022, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.021, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    plt.legend()
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
     plt.savefig("Images/tasksizevsutilitypercost.png")
     plt.show()
 
@@ -362,15 +367,20 @@ def taskSizeVsTaskDrop():
         y3.append(float(lines[3]))
         y4.append(float(lines[4]))
 
-    plt.xlabel('Task size')
-    plt.ylabel('Task Drop Rate')
+    plt.xlabel('Task size', fontsize=11, fontname='monospace')
+    plt.ylabel('Task Drop Rate', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.25, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.3, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.3, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.8, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.17, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    plt.legend()
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
     plt.savefig("Images/tasksizevstaskdrop.png")
     plt.show()
 
@@ -425,7 +435,7 @@ def taskSizeVsTaskDropBar():
 # serverVsTaskDropBar()
 
 # taskSizeVsLatency()
-taskSizeVsEnergy()
+# taskSizeVsEnergy()
 # taskSizeVsUtilityPerUnitCost()
-# taskSizeVsTaskDrop()
+taskSizeVsTaskDrop()
 # taskSizeVsTaskDropBar()
