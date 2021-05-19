@@ -154,7 +154,8 @@ def serverVsLatency():
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
-    plt.savefig("Images/serverlatency.png")
+
+    plt.savefig("Images/servervslatency.png")
     plt.show()
     clearDataSet()
 
@@ -162,15 +163,21 @@ def serverVsLatency():
 def serverVsEnergy():
     prepareDataSet('Data/servervsenergy.txt')
 
-    plt.xlabel('Number of Servers')
-    plt.ylabel('Energy Consumption')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
+    plt.ylabel('Energy Consumption', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.0032, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.0031, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.1, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.0030, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=3.8, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.0026, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.5, fillstyle='full')
 
-    plt.legend()
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
     plt.savefig("Images/servervsenergy.png")
     plt.show()
     clearDataSet()
@@ -354,10 +361,10 @@ def taskSizeVsTaskDropBar():
 # subtaskVsUtilCost()
 # subtaskVsTaskDrop()
 
-serverVsLatency()
+# serverVsLatency()
 serverVsEnergy()
-serverVsUtilityPerUnitCost()
-serverVsTaskDrop()
+# serverVsUtilityPerUnitCost()
+# serverVsTaskDrop()
 # serverVsTaskDropBar()
 
 # taskSizeVsLatency()
