@@ -28,113 +28,96 @@ def clearDataSet():
 
 
 def subtaskVsLatency():
-    x1 = []
-    y1 = []
-    y2 = []
-    y3 = []
-    y4 = []
+    prepareDataSet('Data/subtasklatency.txt')
 
-    for line in open('Data/subtasklatency.txt', 'r'):
-        lines = [i for i in line.split()]
-        x1.append(lines[0])
-        y1.append(float(lines[1]))
-        y2.append(float(lines[2]))
-        y3.append(float(lines[3]))
-        y4.append(float(lines[4]))
+    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
+    plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
 
-    plt.xlabel('Number of subtasks')
-    plt.ylabel('Service Latency')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.10, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.11, marker='^', capsize=2, linestyle='dotted', linewidth=2.0,
+                 markersize=4.2, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.10, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.0, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.09, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
 
-    plt.legend()
-    plt.savefig("Images/subtasklatency.png")
+    plt.savefig("Images/subtaskvslatency.png")
     plt.show()
+    clearDataSet()
 
 
 def subtaskVsEnergy():
-    x1 = []
-    y1 = []
-    y2 = []
-    y3 = []
-    y4 = []
-    for line in open('Data/subtaskenergy.txt', 'r'):
-        lines = [i for i in line.split()]
-        x1.append(lines[0])
-        y1.append(float(lines[1]))
-        y2.append(float(lines[2]))
-        y3.append(float(lines[3]))
-        y4.append(float(lines[4]))
+    prepareDataSet('Data/subtaskenergy.txt')
 
-    plt.xlabel('Number of subtasks')
-    plt.ylabel('Energy Consumption')
+    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
+    plt.ylabel('Energy Consumption', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.010, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.010, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.008, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.007, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    plt.legend()
-    plt.savefig("Images/subtaskenergy.png")
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
+    plt.savefig("Images/subtaskvsenergy.png")
     plt.show()
+    clearDataSet()
 
 
 def subtaskVsTaskDrop():
-    x1 = []
-    y1 = []
-    y2 = []
-    y3 = []
-    y4 = []
-    for line in open('Data/subtaskvstaskdrop.txt', 'r'):
-        lines = [i for i in line.split()]
-        x1.append(lines[0])
-        y1.append(float(lines[1]))
-        y2.append(float(lines[2]))
-        y3.append(float(lines[3]))
-        y4.append(float(lines[4]))
+    prepareDataSet('Data/subtaskvstaskdrop.txt')
 
-    plt.xlabel('Number of subtasks')
-    plt.ylabel('Task Drop Rate')
+    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
+    plt.ylabel('Task Drop Rate', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.22, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.25, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.25, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.15, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.8, fillstyle='full')
 
-    plt.legend()
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
     plt.savefig("Images/subtaskvstaskdrop.png")
     plt.show()
+    clearDataSet()
 
 
 def subtaskVsUtilCost():
-    x1 = []
-    y1 = []
-    y2 = []
-    y3 = []
-    y4 = []
-    for line in open('Data/subtaskutilitypercost.txt', 'r'):
-        lines = [i for i in line.split()]
-        x1.append(lines[0])
-        y1.append(float(lines[1]))
-        y2.append(float(lines[2]))
-        y3.append(float(lines[3]))
-        y4.append(float(lines[4]))
+    prepareDataSet('Data/subtaskutilitypercost.txt')
 
     # plt.title("Number of subtasks vs Utility per Unit Cost")
-    plt.xlabel('Number of subtasks')
-    plt.ylabel('Utility per Unit Cost')
+    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
+    plt.ylabel('Utility per Unit Cost', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.016, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.015, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.014, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.013, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    plt.legend()
-    plt.savefig("Images/subtaskutilitypercost.png")
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
+    plt.savefig("Images/subtaskvsutilitypercost.png")
     plt.show()
+    clearDataSet()
 
 
 def serverVsLatency():
@@ -186,15 +169,21 @@ def serverVsEnergy():
 def serverVsUtilityPerUnitCost():
     prepareDataSet('Data/serverutilitypercost.txt')
 
-    plt.xlabel('Number of Servers')
-    plt.ylabel('Utility per Unit Cost')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
+    plt.ylabel('Utility per Unit Cost', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.022, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.1, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.026, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=3.8, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.017, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.5, fillstyle='full')
 
-    plt.legend()
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
     plt.savefig("Images/servervsutilcost")
     plt.show()
     clearDataSet()
@@ -203,15 +192,21 @@ def serverVsUtilityPerUnitCost():
 def serverVsTaskDrop():
     prepareDataSet('Data/servervstaskdrop.txt')
 
-    plt.xlabel('Number of Servers')
-    plt.ylabel('Task Drop Rate')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
+    plt.ylabel('Task Drop Rate', fontsize=11, fontname='monospace')
 
-    plt.plot(x1, y4, marker='o', c='g', label='SCOPE')
-    plt.plot(x1, y1, marker='v', c='b', label='MTMS')
-    plt.plot(x1, y2, marker='^', c='r', label='Random Assignment')
-    plt.plot(x1, y3, marker='P', c='k', label='Greedy Assignment')
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.25, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.3, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.3, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.8, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.17, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.8, fillstyle='full')
 
-    plt.legend()
+    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
     plt.savefig("Images/servervstaskdrop.png")
     plt.show()
     clearDataSet()
@@ -251,12 +246,18 @@ def taskSizeVsLatency():
     plt.xlabel('Task Size', fontsize=11, fontname='monospace')
     plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
 
-    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.18, marker='o', capsize=2, linestyle='solid', linewidth=0.9, markersize=4.5)
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.21, marker='^', capsize=2, linestyle='dotted', linewidth=1.5, markersize=4.7)
-    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.22, marker='s', capsize=2, linestyle='dashed', linewidth=1.3, markersize=4.7)
-    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.16, marker='P', capsize=2, linestyle='dashdot', linewidth=1.3, markersize=4.7)
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.18, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.21, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.22, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.16, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
+
     plt.savefig("Images/tasksizevslatency.png")
     plt.show()
     clearDataSet()
@@ -279,6 +280,7 @@ def taskSizeVsEnergy():
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
+
     plt.savefig("Images/tasksizevsenergy.png")
     plt.show()
     clearDataSet()
@@ -301,6 +303,7 @@ def taskSizeVsUtilityPerUnitCost():
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
+
     plt.savefig("Images/tasksizevsutilitypercost.png")
     plt.show()
     clearDataSet()
@@ -323,6 +326,7 @@ def taskSizeVsTaskDrop():
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
+
     plt.savefig("Images/tasksizevstaskdrop.png")
     plt.show()
     clearDataSet()
@@ -332,13 +336,13 @@ def taskSizeVsTaskDropBar():
     prepareDataSet('Data/tasksizevstaskdrop.txt')
 
     x = np.arange(len(x1))  # the label locations
-    width = 0.24  # the width of the bars
+    # width = 0.24  # the width of the bars
 
     fig, ax = plt.subplots()
-    rects1 = ax.bar(x - width, y4, width/2, color='g', label='SCO')
-    rects2 = ax.bar(x - width / 2, y1, width/2, color='navy', label='MTMS')
-    rects3 = ax.bar(x, y2, width/2, color='r', label='Random Assignment')
-    rects4 = ax.bar(x + width/2, y3, width/2, color='k', label='Greedy Assignment')
+    # rects1 = ax.bar(x - width, y4, width/2, color='g', label='SCO')
+    # rects2 = ax.bar(x - width / 2, y1, width/2, color='navy', label='MTMS')
+    # rects3 = ax.bar(x, y2, width/2, color='r', label='Random Assignment')
+    # rects4 = ax.bar(x + width/2, y3, width/2, color='k', label='Greedy Assignment')
 
     ax.set_ylabel('Task Drop Rate')
     plt.xlabel("Task Size")
@@ -362,7 +366,7 @@ def taskSizeVsTaskDropBar():
 # subtaskVsTaskDrop()
 
 # serverVsLatency()
-serverVsEnergy()
+# serverVsEnergy()
 # serverVsUtilityPerUnitCost()
 # serverVsTaskDrop()
 # serverVsTaskDropBar()
