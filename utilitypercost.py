@@ -2,8 +2,8 @@ import random
 import math
 import numpy as np
 
-f1 = open("serverlatency.txt", 'r')
-f2 = open("servervsenergy.txt", 'r')
+f1 = open("Data/serverlatency.txt", 'r')
+f2 = open("Data/servervsenergy.txt", 'r')
 lines = f1.readlines()
 mcts1, randm1, greedy1, sco1 = [], [], [], []
 for line in lines:
