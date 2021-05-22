@@ -33,13 +33,13 @@ def subtaskVsLatency():
     plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
     plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
 
-    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.10, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.08, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.11, marker='^', capsize=2, linestyle='dotted', linewidth=2.0,
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.09, marker='^', capsize=2, linestyle='dotted', linewidth=2.0,
                  markersize=4.2, fillstyle='full')
-    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.10, marker='s', capsize=2, linestyle='dashed',
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.08, marker='s', capsize=2, linestyle='dashed',
                  linewidth=1.3, markersize=4.0, fillstyle='full')
-    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.09, marker='P', capsize=2, linestyle='dashdot',
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.07, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
@@ -103,13 +103,13 @@ def subtaskVsUtilCost():
     plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
     plt.ylabel('Utility per Unit Cost', fontsize=11, fontname='monospace')
 
-    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.016, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.010, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.015, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.010, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
                  markersize=4.7, fillstyle='full')
-    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.014, marker='s', capsize=2, linestyle='dashed',
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.009, marker='s', capsize=2, linestyle='dashed',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
-    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.013, marker='P', capsize=2, linestyle='dashdot',
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.008, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
@@ -172,13 +172,13 @@ def serverVsUtilityPerUnitCost():
     plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
     plt.ylabel('Utility per Unit Cost', fontsize=11, fontname='monospace')
 
-    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.022, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.0022, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.0025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
                  markersize=4.1, fillstyle='full')
-    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.026, marker='s', capsize=2, linestyle='dashed',
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.0026, marker='s', capsize=2, linestyle='dashed',
                  linewidth=1.3, markersize=3.8, fillstyle='full')
-    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.017, marker='P', capsize=2, linestyle='dashdot',
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.0017, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.5, fillstyle='full')
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
@@ -292,13 +292,13 @@ def taskSizeVsUtilityPerUnitCost():
     plt.xlabel('Task size', fontsize=11, fontname='monospace')
     plt.ylabel('Utility per unit Cost', fontsize=11, fontname='monospace')
 
-    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+    plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.0026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
-    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+    plt.errorbar(x1, y1, color='b', label='MTMS', yerr=0.0025, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
                  markersize=4.7, fillstyle='full')
-    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.022, marker='s', capsize=2, linestyle='dashed',
+    plt.errorbar(x1, y2, color='r', label='Random Assignment', yerr=0.0022, marker='s', capsize=2, linestyle='dashed',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
-    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.021, marker='P', capsize=2, linestyle='dashdot',
+    plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.0021, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
     font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
@@ -362,7 +362,7 @@ def taskSizeVsTaskDropBar():
 
 # subtaskVsLatency()
 # subtaskVsEnergy()
-# subtaskVsUtilCost()
+subtaskVsUtilCost()
 # subtaskVsTaskDrop()
 
 # serverVsLatency()
