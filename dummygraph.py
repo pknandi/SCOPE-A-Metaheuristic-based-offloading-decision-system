@@ -30,8 +30,8 @@ def clearDataSet():
 def subtaskVsLatency():
     prepareDataSet('Data/subtasklatency.txt')
 
-    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
-    plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Subtasks', fontsize=11, fontname='serif')
+    plt.ylabel('Service Latency (Sec)', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.08, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -42,7 +42,7 @@ def subtaskVsLatency():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.07, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/subtaskvslatency.png")
@@ -53,8 +53,8 @@ def subtaskVsLatency():
 def subtaskVsEnergy():
     prepareDataSet('Data/subtaskenergy.txt')
 
-    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
-    plt.ylabel('Energy Consumption', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Subtasks', fontsize=11, fontname='serif')
+    plt.ylabel('Energy Consumption (J)', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.010, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -65,7 +65,7 @@ def subtaskVsEnergy():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.007, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/subtaskvsenergy.png")
@@ -76,8 +76,8 @@ def subtaskVsEnergy():
 def subtaskVsTaskDrop():
     prepareDataSet('Data/subtaskvstaskdrop.txt')
 
-    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
-    plt.ylabel('Task Drop Rate', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Subtasks', fontsize=11, fontname='serif')
+    plt.ylabel('Task Drop Rate', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.22, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -88,7 +88,7 @@ def subtaskVsTaskDrop():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.15, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.8, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/subtaskvstaskdrop.png")
@@ -100,8 +100,8 @@ def subtaskVsUtilCost():
     prepareDataSet('Data/subtaskutilitypercost.txt')
 
     # plt.title("Number of subtasks vs Utility per Unit Cost")
-    plt.xlabel('Number of subtasks', fontsize=11, fontname='monospace')
-    plt.ylabel('Utility per Unit Cost', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Subtasks', fontsize=11, fontname='serif')
+    plt.ylabel('Utility Per Unit Cost', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.010, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -112,7 +112,7 @@ def subtaskVsUtilCost():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.008, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/subtaskvsutilitypercost.png")
@@ -123,8 +123,8 @@ def subtaskVsUtilCost():
 def serverVsLatency():
     prepareDataSet('Data/serverlatency.txt')
 
-    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
-    plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='serif')
+    plt.ylabel('Service Latency (Sec)', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -135,7 +135,7 @@ def serverVsLatency():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.021, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/servervslatency.png")
@@ -146,8 +146,8 @@ def serverVsLatency():
 def serverVsEnergy():
     prepareDataSet('Data/servervsenergy.txt')
 
-    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
-    plt.ylabel('Energy Consumption', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='serif')
+    plt.ylabel('Energy Consumption (J)', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.0032, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -158,7 +158,7 @@ def serverVsEnergy():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.0026, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.5, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/servervsenergy.png")
@@ -169,8 +169,8 @@ def serverVsEnergy():
 def serverVsUtilityPerUnitCost():
     prepareDataSet('Data/serverutilitypercost.txt')
 
-    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
-    plt.ylabel('Utility per Unit Cost', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='serif')
+    plt.ylabel('Utility Per Unit Cost', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.0022, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -181,7 +181,7 @@ def serverVsUtilityPerUnitCost():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.0017, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.5, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/servervsutilcost")
@@ -192,8 +192,8 @@ def serverVsUtilityPerUnitCost():
 def serverVsTaskDrop():
     prepareDataSet('Data/servervstaskdrop.txt')
 
-    plt.xlabel('Number of Servers', fontsize=11, fontname='monospace')
-    plt.ylabel('Task Drop Rate', fontsize=11, fontname='monospace')
+    plt.xlabel('Number of Servers', fontsize=11, fontname='serif')
+    plt.ylabel('Task Drop Rate', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.25, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -204,7 +204,7 @@ def serverVsTaskDrop():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.17, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.8, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/servervstaskdrop.png")
@@ -243,8 +243,8 @@ def serverVsTaskDropBar():
 def taskSizeVsLatency():
     prepareDataSet('Data/tasksizevslatency.txt')
 
-    plt.xlabel('Task Size', fontsize=11, fontname='monospace')
-    plt.ylabel('Service Latency', fontsize=11, fontname='monospace')
+    plt.xlabel('Task Size (Kb)', fontsize=11, fontname='serif')
+    plt.ylabel('Service Latency (Sec)', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.18, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -255,7 +255,7 @@ def taskSizeVsLatency():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.16, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/tasksizevslatency.png")
@@ -266,8 +266,8 @@ def taskSizeVsLatency():
 def taskSizeVsEnergy():
     prepareDataSet('Data/tasksizevsenergy.txt')
 
-    plt.xlabel('Task size', fontsize=11, fontname='monospace')
-    plt.ylabel('Energy Consumption', fontsize=11, fontname='monospace')
+    plt.xlabel('Task Size (Kb)', fontsize=11, fontname='serif')
+    plt.ylabel('Energy Consumption (J)', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -278,7 +278,7 @@ def taskSizeVsEnergy():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.021, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/tasksizevsenergy.png")
@@ -289,8 +289,8 @@ def taskSizeVsEnergy():
 def taskSizeVsUtilityPerUnitCost():
     prepareDataSet('Data/tasksizevsutilitypercost.txt')
 
-    plt.xlabel('Task size', fontsize=11, fontname='monospace')
-    plt.ylabel('Utility per unit Cost', fontsize=11, fontname='monospace')
+    plt.xlabel('Task Size (Kb)', fontsize=11, fontname='serif')
+    plt.ylabel('Utility Per Unit Cost', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.0026, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -301,7 +301,7 @@ def taskSizeVsUtilityPerUnitCost():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.0021, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.7, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/tasksizevsutilitypercost.png")
@@ -312,8 +312,8 @@ def taskSizeVsUtilityPerUnitCost():
 def taskSizeVsTaskDrop():
     prepareDataSet('Data/tasksizevstaskdrop.txt')
 
-    plt.xlabel('Task size', fontsize=11, fontname='monospace')
-    plt.ylabel('Task Drop Rate', fontsize=11, fontname='monospace')
+    plt.xlabel('Task Size (Kb)', fontsize=11, fontname='serif')
+    plt.ylabel('Task Drop Rate', fontsize=11, fontname='serif')
 
     plt.errorbar(x1, y4, color='g', label='SCOPE', yerr=0.25, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
                  markersize=4.5, fillstyle='full')
@@ -324,7 +324,7 @@ def taskSizeVsTaskDrop():
     plt.errorbar(x1, y3, color='k', label='Greedy Assignment', yerr=0.17, marker='P', capsize=2, linestyle='dashdot',
                  linewidth=1.3, markersize=4.8, fillstyle='full')
 
-    font = font_manager.FontProperties(family='monospace', weight='regular', style='normal', size=10)
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
     plt.legend(prop=font)
 
     plt.savefig("Images/tasksizevstaskdrop.png")
@@ -360,19 +360,19 @@ def taskSizeVsTaskDropBar():
     clearDataSet()
 
 
-# subtaskVsLatency()
-# subtaskVsEnergy()
+subtaskVsLatency()
+subtaskVsEnergy()
 subtaskVsUtilCost()
-# subtaskVsTaskDrop()
+subtaskVsTaskDrop()
 
-# serverVsLatency()
-# serverVsEnergy()
-# serverVsUtilityPerUnitCost()
-# serverVsTaskDrop()
+serverVsLatency()
+serverVsEnergy()
+serverVsUtilityPerUnitCost()
+serverVsTaskDrop()
 # serverVsTaskDropBar()
 
-# taskSizeVsLatency()
-# taskSizeVsEnergy()
-# taskSizeVsUtilityPerUnitCost()
-# taskSizeVsTaskDrop()
+taskSizeVsLatency()
+taskSizeVsEnergy()
+taskSizeVsUtilityPerUnitCost()
+taskSizeVsTaskDrop()
 # taskSizeVsTaskDropBar()
