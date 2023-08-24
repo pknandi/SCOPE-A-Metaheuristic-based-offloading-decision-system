@@ -7,6 +7,7 @@ y1 = []
 y2 = []
 y3 = []
 y4 = []
+y5 = []
 
 
 def prepareDataSet(s):
@@ -17,6 +18,7 @@ def prepareDataSet(s):
         y2.append(float(lines[2]))
         y3.append(float(lines[3]))
         y4.append(float(lines[4]))
+        y5.append(float(lines[5]))
 
 
 def clearDataSet():
@@ -49,6 +51,31 @@ def subtaskVsLatency():
     plt.show()
     clearDataSet()
 
+
+def subtaskVsLatencyVarryingAlpha():
+    prepareDataSet('Data/subtasklatency_varryingAlpha.txt')
+
+    plt.xlabel('Number of Subtasks', fontsize=11, fontname='serif')
+    plt.ylabel('Service Latency (Sec)', fontsize=11, fontname='serif')
+
+    plt.errorbar(x1, y5, color='m', label=chr(945)+' = .9', yerr=0.010, marker='v', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y1, color='b', label=chr(945)+' = .7', yerr=0.09, marker='^', capsize=2, linestyle='dotted', linewidth=2.0,
+                 markersize=4.2, fillstyle='full')
+
+    plt.errorbar(x1, y4, color='g', label=chr(945)+' = .5', yerr=0.08, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label=chr(945)+' = .3', yerr=0.08, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.0, fillstyle='full')
+    plt.errorbar(x1, y3, color='k', label=chr(945)+' = .1', yerr=0.07, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
+    plt.savefig("Images/subtaskvslatencyVarryingAlpha.png")
+    plt.show()
+    clearDataSet()
 
 def subtaskVsEnergy():
     prepareDataSet('Data/subtaskenergy.txt')
@@ -116,6 +143,34 @@ def subtaskVsUtilCost():
     plt.legend(prop=font)
 
     plt.savefig("Images/subtaskvsutilitypercost.png")
+    plt.show()
+    clearDataSet()
+
+def subtaskVsUtilCostVarryingAlpha():
+    prepareDataSet('Data/subtaskutilitypercostVarryingAlpha.txt')
+
+    # plt.title("Number of subtasks vs Utility per Unit Cost varrying Alpha")
+    plt.xlabel('Number of Subtasks', fontsize=11, fontname='serif')
+    plt.ylabel('Utility Per Unit Cost', fontsize=11, fontname='serif')
+   
+    plt.errorbar(x1, y5, color='m', label=chr(945)+' = .9', yerr=0.010, marker='v', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y4, color='g', label=chr(945)+' = .7', yerr=0.010, marker='o', capsize=2, linestyle='solid', linewidth=0.9,
+                 markersize=4.5, fillstyle='full')
+    plt.errorbar(x1, y3, color='b', label=chr(945)+' = .5', yerr=0.010, marker='^', capsize=2, linestyle='dotted', linewidth=1.5,
+                 markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y2, color='r', label=chr(945)+' = .3', yerr=0.009, marker='s', capsize=2, linestyle='dashed',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+    plt.errorbar(x1, y1, color='k', label=chr(945)+' = .1', yerr=0.008, marker='P', capsize=2, linestyle='dashdot',
+                 linewidth=1.3, markersize=4.7, fillstyle='full')
+
+    #y_ticks = [i * 0.25 for i in range(int(max(max(y1), max(y2), max(y3), max(y4), max(y5)) / 0.25) + 1)]
+    #plt.yticks(y_ticks)
+
+    font = font_manager.FontProperties(family='serif', weight='regular', style='normal', size=10)
+    plt.legend(prop=font)
+
+    plt.savefig("Images/subtaskvsutilitypercostVaryingAlpha.png")
     plt.show()
     clearDataSet()
 
@@ -360,19 +415,21 @@ def taskSizeVsTaskDropBar():
     clearDataSet()
 
 
-subtaskVsLatency()
-subtaskVsEnergy()
-subtaskVsUtilCost()
-subtaskVsTaskDrop()
+#subtaskVsLatency()
+#subtaskVsEnergy()
+#subtaskVsUtilCost()
+#subtaskVsTaskDrop()
+#subtaskVsUtilCostVarryingAlpha()
+subtaskVsLatencyVarryingAlpha()
+ 
+#serverVsLatency()
+#serverVsEnergy()
+#serverVsUtilityPerUnitCost()
+#serverVsTaskDrop()
+#serverVsTaskDropBar()
 
-serverVsLatency()
-serverVsEnergy()
-serverVsUtilityPerUnitCost()
-serverVsTaskDrop()
-# serverVsTaskDropBar()
-
-taskSizeVsLatency()
-taskSizeVsEnergy()
-taskSizeVsUtilityPerUnitCost()
-taskSizeVsTaskDrop()
+#taskSizeVsLatency()
+#taskSizeVsEnergy()
+#taskSizeVsUtilityPerUnitCost()
+#taskSizeVsTaskDrop()
 # taskSizeVsTaskDropBar()
